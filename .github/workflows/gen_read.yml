@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64'
-      - run: python3 ~/funcs/langs.py 
+      - run: python3 $GITHUB_WORKSPACE/funcs/langs.py 
 
       - uses: actions/checkout@v2
       - name: Generate
@@ -25,7 +25,7 @@ jobs:
           DAYS="$((($(date +%s)-$(date +%s --date "2004-09-01"))/(3600*24)))"
           NF_LOCAL="nevalicjus@nev"
           NF_UPTIME="$YEARS years and $(($DAYS-$YEARS*365)) days"
-          NF_LANGS="$(cat ~/funcs/temp-langs.txt)"
+          NF_LANGS="$(cat $GITHUB_WORKSPACE/funcs/temp-langs.txt)"
           NF_OS="Win & WSL, Mac, Ubuntu"
           NF_SHELL="Bash"
           NF_EDITOR="Atom"
@@ -43,7 +43,7 @@ jobs:
 
       - name: Commit & Push Changes
         run: |
-          rm ~/funcs/temp-local-langs.txt
+          rm $GITHUB_WORKSPACE/funcs/temp-local-langs.txt
           git add README.md
           git config user.name 'github-actions'
           git config user.email 'github-actions@github.com'
