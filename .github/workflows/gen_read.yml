@@ -12,13 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+      - name: Checkout Repo
+      
       - uses: actions/setup-python@v2
         with:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64'
       - run: python3 $GITHUB_WORKSPACE/funcs/langs.py 
 
-      - uses: actions/checkout@v2
       - name: Generate
         run: |
           YEARS="$((($(date +%s)-$(date +%s --date "2004-09-01"))/(3600*24*365)))"
