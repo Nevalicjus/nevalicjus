@@ -26,6 +26,6 @@ for x in range(0, 10):
         pass
 
 print(langs_fin[:-2])
-f.open("funcs/temp-langs.txt", "w")
+f = open("funcs/temp-langs.txt", "w")
 f.write(langs_fin[:-2])
 f.close()
