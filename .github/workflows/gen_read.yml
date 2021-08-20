@@ -13,8 +13,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Checkout Repo
+      
       - uses: actions/setup-python@v2
-      - name: Checkout Repo & Run Python Langs
+      - name: Run Python Langs
         with:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64'
