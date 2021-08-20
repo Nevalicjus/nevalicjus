@@ -21,7 +21,7 @@ jobs:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64'
       - name: Install Py-Dependencies
-        run: python3 -m pip install bs4
+        run: python3 -m pip install bs4 requests
         
       - name: Run PyFunc-Langs
         run: python3 $GITHUB_WORKSPACE/funcs/langs.py 
