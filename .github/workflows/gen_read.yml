@@ -15,12 +15,16 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
     
-      - name: Run Python Langs
+      - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64'
-      - run: python3 $GITHUB_WORKSPACE/funcs/langs.py 
+      - name: Install Py-Dependencies
+        run: python3 -m pip install bs4
+        
+      - name: Run PyFunc-Langs
+        run: python3 $GITHUB_WORKSPACE/funcs/langs.py 
 
       - name: Generate
         run: |
