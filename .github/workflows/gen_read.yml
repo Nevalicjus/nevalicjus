@@ -36,7 +36,7 @@ jobs:
           NF_OS="Win & WSL, Mac, Linux"
           NF_SHELL="Bash"
           NF_EDITOR="Atom & Nano"
-          NF_CRON="if != code; sleep"
+          NF_CRON="kill -9 *"
           NF_WEBSITE="n3v.xyz"
           NF_DISCORD="Nevalicjus#2137"
           NF_TWITTER="@maciejbromirski"
