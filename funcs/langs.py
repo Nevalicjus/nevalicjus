@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-url = "https://github-readme-stats.vercel.app/api/top-langs/?username=Nevalicjus&exclude_repo=jetbrains-hyperskill&hide=html"
+url = "https://github-readme-stats.vercel.app/api/top-langs/?username=Nevalicjus&hide=html"
 html_content = requests.get(url).text
 soup = BeautifulSoup(html_content, "lxml")
 
