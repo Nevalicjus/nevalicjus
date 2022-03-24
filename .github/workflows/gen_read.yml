@@ -23,32 +23,115 @@ jobs:
       - name: Install Py-Dependencies
         run: python3 -m pip install bs4 requests lxml
 
-      - name: Run PyFunc-Langs
-        run: python3 $GITHUB_WORKSPACE/funcs/langs.py
-
       - name: Generate
         run: |
           YEARS="$((($(date +%s)-$(date +%s --date "2004-09-01"))/(3600*24*365)))"
           DAYS="$((($(date +%s)-$(date +%s --date "2004-09-01"))/(3600*24)))"
           NF_LOCAL="nevalicjus@nev"
           NF_UPTIME="$YEARS years and $(($DAYS-$YEARS*365)) days"
-          NF_LANGS="$(cat $GITHUB_WORKSPACE/funcs/temp-langs.txt)"
+          NF_LANGS="$(python3 -c "from bs4 import BeautifulSoup
+          import requests
+          url = \"https://github-readme-stats.vercel.app/api/top-langs/?username=Nevalicjus&hide=html\"
+          html_content = requests.get(url).text
+          soup = BeautifulSoup(html_content, \"lxml\")
+          gdp_table = soup.find(\"svg\", attrs={})
+          gdp_table_data = gdp_table.find_all(\"g\")
+          langs = []
+          for g in gdp_table_data[2].find_all(\"g\"):
+              for textfield in g.find_all(\"text\"):
+                  langs.append(f\"{textfield.text}\")
+          langs_fin = \"\"
+          for x in range(0, 10):
+              try:
+                  langs_fin += f\"{langs[x]}\"
+                  if langs[x].endswith(\"%\"):
+                      langs_fin += f\", \"
+                  else:
+                      langs_fin += \" \"
+              except IndexError:
+                  pass
+          print(langs_fin[:-2])")"
           NF_OS="Win & WSL, Mac, Linux"
           NF_SHELL="Bash"
-          NF_EDITOR="Atom & Nano"
-          NF_CRON="kill -9 *"
+          NF_EDITOR="Atom (+VSCode) & Micro (+Nano)"
           NF_WEBSITE="n3v.xyz"
           NF_DISCORD="Nevalicjus#2137"
           NF_TWITTER="@maciejbromirski"
           NF_GITHUB="Nevalicjus"
-          NF_PROJ1="Invitebot: /invitebot [invitebot.xyz]"
-          NF_PROJ2="papermcpy: /papermcpy"
-          NF_PROJ3="spyget: /spyget"
-          NF_PROJ4="flurry: /flurry"
-          NF_PROJ5="wormhole: /wormhole"
-          NF_PROJ6="downtime: /downtime"
-          echo -e "\`\`\`\n\$ nevfetch\n                   .~vVeZNgQBBBQQg9Ze1v~.\n              \`^}%B@@@@@@@@@@@@@@@@@@@@@@8%}=\`                 $NF_LOCAL\n           -Lq#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#qr-              -------------------\n        .V0@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0?.           Uptime: $NF_UPTIME\n      _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l\`         Languages: $NF_LANGS\n    \`o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o\`       OS: $NF_OS\n   ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Shell: $NF_SHELL\n  ?@@@@@@@@@@q                                z@@@@@@@@@#?     Editor: $NF_EDITOR\n :@@@@@@@@@@@Q                                R@@@@@@@@@@@\"    Cron: $NF_CRON\n_g@@@@@@@@@@2-                                \`M@@@@@@@@@@0\na@@@@@@@@@@2                                    v@@@@@@@@@@;   contact\n#@@@@@@@@@@_                                     @@@@@@@@@@y   -------------------\n@@@@@@@@@@@.                                     @@@@@@@@@@%   Website: $NF_WEBSITE\n#@@@@@@@@@@r                                    :@@@@@@@@@@s   Discord: $NF_DISCORD\nW@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Twitter: $NF_TWITTER\n~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    Github: $NF_GITHUB\n ;@@@@@@@@@@@@6^.                          \`\\p@@@@@@@@@@@@~\n  n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     projects\n   2#@@@#hr _Y#@@@@@@@#q\`          \`X#@@@@@@@@@@@@@@@@@#~      ------------------\n    .d@@@@@D\` .n6#@@@#V\`             Q@@@@@@@@@@@@@@@@d.       $NF_PROJ1\n      x0@@@@0^   \`__-                M@@@@@@@@@@@@@@0=         $NF_PROJ2\n        =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=           $NF_PROJ3\n          \`vR#@@@@@@@@?              M@@@@@@@@#Pv\`             $NF_PROJ4\n              \"Lf8@@@@v              q@@@#Qa?:                 $NF_PROJ5\n                  -!v|\`              _?v!\`                     $NF_PROJ6\n\`\`\`"
-          echo -e "\`\`\`\n\$ nevfetch\n                   .~vVeZNgQBBBQQg9Ze1v~.\n              \`^}%B@@@@@@@@@@@@@@@@@@@@@@8%}=\`                 $NF_LOCAL\n           -Lq#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#qr-              -------------------\n        .V0@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0?.           Uptime: $NF_UPTIME\n      _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l\`         Languages: $NF_LANGS\n    \`o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o\`       OS: $NF_OS\n   ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Shell: $NF_SHELL\n  ?@@@@@@@@@@q                                z@@@@@@@@@#?     Editor: $NF_EDITOR\n :@@@@@@@@@@@Q                                R@@@@@@@@@@@\"    Cron: $NF_CRON\n_g@@@@@@@@@@2-                                \`M@@@@@@@@@@0\na@@@@@@@@@@2                                    v@@@@@@@@@@;   contact\n#@@@@@@@@@@_                                     @@@@@@@@@@y   -------------------\n@@@@@@@@@@@.                                     @@@@@@@@@@%   Website: $NF_WEBSITE\n#@@@@@@@@@@r                                    :@@@@@@@@@@s   Discord: $NF_DISCORD\nW@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Twitter: $NF_TWITTER\n~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    Github: $NF_GITHUB\n ;@@@@@@@@@@@@6^.                          \`\\p@@@@@@@@@@@@~\n  n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     projects\n   2#@@@#hr _Y#@@@@@@@#q\`          \`X#@@@@@@@@@@@@@@@@@#~      ------------------\n    .d@@@@@D\` .n6#@@@#V\`             Q@@@@@@@@@@@@@@@@d.       $NF_PROJ1\n      x0@@@@0^   \`__-                M@@@@@@@@@@@@@@0=         $NF_PROJ2\n        =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=           $NF_PROJ3\n          \`vR#@@@@@@@@?              M@@@@@@@@#Pv\`             $NF_PROJ4\n              \"Lf8@@@@v              q@@@#Qa?:                 $NF_PROJ5\n                  -!v|\`              _?v!\`                     $NF_PROJ6\n\`\`\`" > README.md
+          NF_PROJ1="InviteBot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links"
+          NF_PROJ2="papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library for python"
+          NF_PROJ3="wormhole:  /wormhole                          - Discord bot that joins text channels"
+          NF_PROJ4="gitbot:    /gitbot                            - Discord bot for git repository management"
+          echo -e "\`\`\`\n\
+          \$ nevfetch\n\
+                            .~vVeZNgQBBBQQg9Ze1v~.                         \n\
+                        \`^}%B@@@@@@@@@@@@@@@@@@@@@@8%}=\`                 $NF_LOCAL \n\
+                       -Lq#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#qr-            ------------------- \n\
+                  .V0@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0?.           Uptime: $NF_UPTIME \n\
+                _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l\`         Languages: $NF_LANGS \n\
+              \`o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o\`       OS: $NF_OS \n\
+             ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Shell: $NF_SHELL \n\
+            ?@@@@@@@@@@q                                z@@@@@@@@@#?     Editor: $NF_EDITOR \n\
+           :@@@@@@@@@@@Q                                R@@@@@@@@@@@\"     \n\
+          _g@@@@@@@@@@2-                                \`M@@@@@@@@@@0     \n\
+          a@@@@@@@@@@2                                    v@@@@@@@@@@;   contact \n\
+          #@@@@@@@@@@_                                     @@@@@@@@@@y   ------------------- \n\
+          @@@@@@@@@@@.                                     @@@@@@@@@@%   Website: $NF_WEBSITE \n\
+          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Discord: $NF_DISCORD \n\
+          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Twitter: $NF_TWITTER \n\
+          ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    Github: $NF_GITHUB \n\
+           ;@@@@@@@@@@@@6^.                          \`\\p@@@@@@@@@@@@~    \n\
+            n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     \n\
+             2#@@@#hr _Y#@@@@@@@#q\`          \`X#@@@@@@@@@@@@@@@@@#~      \n\
+              .d@@@@@D\` .n6#@@@#V\`             Q@@@@@@@@@@@@@@@@d.       \n\
+                x0@@@@0^   \`__-                M@@@@@@@@@@@@@@0=          \n\
+                  =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=             \n\
+                    \`vR#@@@@@@@@?              M@@@@@@@@#Pv\`             \n\
+                        \"Lf8@@@@v              q@@@#Qa?:                  \n\
+                            -!v|\`              _?v!\`                     \n\
+
+          \$ nevprojs \n\
+          ------------------ \n\
+          $NF_PROJ1 \n\
+          $NF_PROJ2 \n\
+          $NF_PROJ3 \n\
+          $NF_PROJ4 \n\
+          \`\`\`"
+          echo -e "\`\`\`\n\
+          \$ nevfetch\n\
+                            .~vVeZNgQBBBQQg9Ze1v~.                         \n\
+                        \`^}%B@@@@@@@@@@@@@@@@@@@@@@8%}=\`                 $NF_LOCAL \n\
+                       -Lq#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#qr-            ------------------- \n\
+                  .V0@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0?.           Uptime: $NF_UPTIME \n\
+                _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l\`         Languages: $NF_LANGS \n\
+              \`o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o\`       OS: $NF_OS \n\
+             ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Shell: $NF_SHELL \n\
+            ?@@@@@@@@@@q                                z@@@@@@@@@#?     Editor: $NF_EDITOR \n\
+           :@@@@@@@@@@@Q                                R@@@@@@@@@@@\"     \n\
+          _g@@@@@@@@@@2-                                \`M@@@@@@@@@@0     \n\
+          a@@@@@@@@@@2                                    v@@@@@@@@@@;   contact \n\
+          #@@@@@@@@@@_                                     @@@@@@@@@@y   ------------------- \n\
+          @@@@@@@@@@@.                                     @@@@@@@@@@%   Website: $NF_WEBSITE \n\
+          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Discord: $NF_DISCORD \n\
+          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Twitter: $NF_TWITTER \n\
+          ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    Github: $NF_GITHUB \n\
+           ;@@@@@@@@@@@@6^.                          \`\\p@@@@@@@@@@@@~    \n\
+            n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     \n\
+             2#@@@#hr _Y#@@@@@@@#q\`          \`X#@@@@@@@@@@@@@@@@@#~      \n\
+              .d@@@@@D\` .n6#@@@#V\`             Q@@@@@@@@@@@@@@@@d.       \n\
+                x0@@@@0^   \`__-                M@@@@@@@@@@@@@@0=          \n\
+                  =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=             \n\
+                    \`vR#@@@@@@@@?              M@@@@@@@@#Pv\`             \n\
+                        \"Lf8@@@@v              q@@@#Qa?:                  \n\
+                            -!v|\`              _?v!\`                     \n\
+
+          \$ nevprojs \n\
+          ------------------ \n\
+          $NF_PROJ1 \n\
+          $NF_PROJ2 \n\
+          $NF_PROJ3 \n\
+          $NF_PROJ4 \n\
+          \`\`\`" > README.md
 
       - name: Commit & Push Changes
         run: |
