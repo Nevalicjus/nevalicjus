@@ -32,28 +32,32 @@ jobs:
           NF_LANGS="$(python3 -c "from bs4 import BeautifulSoup
           import requests
           url = \"https://github-readme-stats.vercel.app/api/top-langs/?username=Nevalicjus&hide=html\"
-          html_content = requests.get(url).text
-          soup = BeautifulSoup(html_content, \"lxml\")
-          gdp_table = soup.find(\"svg\", attrs={})
-          gdp_table_data = gdp_table.find_all(\"g\")
-          langs = []
-          for g in gdp_table_data[2].find_all(\"g\"):
-              for textfield in g.find_all(\"text\"):
-                  langs.append(f\"{textfield.text}\")
-          langs_fin = \"\"
-          for x in range(0, 10):
-              try:
-                  langs_fin += f\"{langs[x]}\"
-                  if langs[x].endswith(\"%\"):
-                      langs_fin += f\", \"
-                  else:
-                      langs_fin += \" \"
-              except IndexError:
-                  pass
-          print(langs_fin[:-2])")"
+          con = requests.get(url).text
+          s = BeautifulSoup(con, \"lxml\")
+          gdpt = s.find(\"svg\", attrs={})
+          gdptd = gdpt.find_all(\"g\")
+          l = []
+          for g in gdptd[2].find_all(\"g\"):
+              for txf in g.find_all(\"text\"):
+                  l.append(f\"{txf.text}\")
+          lf = \"\"
+          x = 0
+          while x < len(l):
+              lf += f\"{l[x]}\"
+              if l[x].endswith(\"%\"):
+                  lf += f\", \"
+              else:
+                  lf += \" \"
+              x += 1
+          print(lf[:-2])")"
+          NF_LANG1="$(awk '{split($0, array, ", "); print array[1]}' <<< "$NF_LANGS")"
+          NF_LANG2="$(awk '{split($0, array, ", "); print array[2]}' <<< "$NF_LANGS")"
+          NF_LANG3="$(awk '{split($0, array, ", "); print array[3]}' <<< "$NF_LANGS")"
+          NF_LANG4="$(awk '{split($0, array, ", "); print array[4]}' <<< "$NF_LANGS")"
+          NF_LANG5="$(awk '{split($0, array, ", "); print array[5]}' <<< "$NF_LANGS")"
           NF_OS="Win & WSL, Mac, Linux"
           NF_SHELL="Bash"
-          NF_EDITOR="Atom (+VSCode) & Micro (+Nano)"
+          NF_EDITOR="Atom & Micro" #Atom (+VSCode) & Micro (+Nano)
           NF_WEBSITE="n3v.xyz"
           NF_DISCORD="Nevalicjus#2137"
           NF_TWITTER="@maciejbromirski"
@@ -68,26 +72,26 @@ jobs:
                         \`^}%B@@@@@@@@@@@@@@@@@@@@@@8%}=\`                 $NF_LOCAL \n\
                        -Lq#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#qr-            ------------------- \n\
                   .V0@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0?.           Uptime: $NF_UPTIME \n\
-                _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l\`         Languages: $NF_LANGS \n\
-              \`o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o\`       OS: $NF_OS \n\
-             ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Shell: $NF_SHELL \n\
-            ?@@@@@@@@@@q                                z@@@@@@@@@#?     Editor: $NF_EDITOR \n\
+                _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l\`         OS: $NF_OS \n\
+              \`o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o\`       Shell: $NF_SHELL \n\
+             ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Editor: $NF_EDITOR \n\
+            ?@@@@@@@@@@q                                z@@@@@@@@@#?     \n\
            :@@@@@@@@@@@Q                                R@@@@@@@@@@@\"     \n\
-          _g@@@@@@@@@@2-                                \`M@@@@@@@@@@0     \n\
-          a@@@@@@@@@@2                                    v@@@@@@@@@@;   contact \n\
-          #@@@@@@@@@@_                                     @@@@@@@@@@y   ------------------- \n\
-          @@@@@@@@@@@.                                     @@@@@@@@@@%   Website: $NF_WEBSITE \n\
-          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Discord: $NF_DISCORD \n\
-          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Twitter: $NF_TWITTER \n\
-          ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    Github: $NF_GITHUB \n\
+          _g@@@@@@@@@@2-                                \`M@@@@@@@@@@0    contact \n\
+          a@@@@@@@@@@2                                    v@@@@@@@@@@;   ------------------- \n\
+          #@@@@@@@@@@_                                     @@@@@@@@@@y   Website: $NF_WEBSITE \n\
+          @@@@@@@@@@@.                                     @@@@@@@@@@%   Discord: $NF_DISCORD \n\
+          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Twitter: $NF_TWITTER \n\
+          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Github: $NF_GITHUB \n\
+          ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    \n\
            ;@@@@@@@@@@@@6^.                          \`\\p@@@@@@@@@@@@~    \n\
-            n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     \n\
-             2#@@@#hr _Y#@@@@@@@#q\`          \`X#@@@@@@@@@@@@@@@@@#~      \n\
-              .d@@@@@D\` .n6#@@@#V\`             Q@@@@@@@@@@@@@@@@d.       \n\
-                x0@@@@0^   \`__-                M@@@@@@@@@@@@@@0=          \n\
-                  =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=             \n\
-                    \`vR#@@@@@@@@?              M@@@@@@@@#Pv\`             \n\
-                        \"Lf8@@@@v              q@@@#Qa?:                  \n\
+            n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     languages \n\
+             2#@@@#hr _Y#@@@@@@@#q\`          \`X#@@@@@@@@@@@@@@@@@#~      ------------------- \n\
+              .d@@@@@D\` .n6#@@@#V\`             Q@@@@@@@@@@@@@@@@d.       $NF_LANG1 \n\
+                x0@@@@0^   \`__-                M@@@@@@@@@@@@@@0=         $NF_LANG2 \n\
+                  =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=           $NF_LANG3 \n\
+                    \`vR#@@@@@@@@?              M@@@@@@@@#Pv\`             $NF_LANG4 \n\
+                        \"Lf8@@@@v              q@@@#Qa?:                 $NF_LANG5 \n\
                             -!v|\`              _?v!\`                     \n\
 
           \$ nevprojs \n\
@@ -103,26 +107,26 @@ jobs:
                         \`^}%B@@@@@@@@@@@@@@@@@@@@@@8%}=\`                 $NF_LOCAL \n\
                        -Lq#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#qr-            ------------------- \n\
                   .V0@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0?.           Uptime: $NF_UPTIME \n\
-                _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l\`         Languages: $NF_LANGS \n\
-              \`o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o\`       OS: $NF_OS \n\
-             ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Shell: $NF_SHELL \n\
-            ?@@@@@@@@@@q                                z@@@@@@@@@#?     Editor: $NF_EDITOR \n\
+                _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l\`         OS: $NF_OS \n\
+              \`o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o\`       Shell: $NF_SHELL \n\
+             ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Editor: $NF_EDITOR \n\
+            ?@@@@@@@@@@q                                z@@@@@@@@@#?     \n\
            :@@@@@@@@@@@Q                                R@@@@@@@@@@@\"     \n\
-          _g@@@@@@@@@@2-                                \`M@@@@@@@@@@0     \n\
-          a@@@@@@@@@@2                                    v@@@@@@@@@@;   contact \n\
-          #@@@@@@@@@@_                                     @@@@@@@@@@y   ------------------- \n\
-          @@@@@@@@@@@.                                     @@@@@@@@@@%   Website: $NF_WEBSITE \n\
-          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Discord: $NF_DISCORD \n\
-          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Twitter: $NF_TWITTER \n\
-          ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    Github: $NF_GITHUB \n\
+          _g@@@@@@@@@@2-                                \`M@@@@@@@@@@0    contact \n\
+          a@@@@@@@@@@2                                    v@@@@@@@@@@;   ------------------- \n\
+          #@@@@@@@@@@_                                     @@@@@@@@@@y   Website: $NF_WEBSITE \n\
+          @@@@@@@@@@@.                                     @@@@@@@@@@%   Discord: $NF_DISCORD \n\
+          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Twitter: $NF_TWITTER \n\
+          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Github: $NF_GITHUB \n\
+          ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    \n\
            ;@@@@@@@@@@@@6^.                          \`\\p@@@@@@@@@@@@~    \n\
-            n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     \n\
-             2#@@@#hr _Y#@@@@@@@#q\`          \`X#@@@@@@@@@@@@@@@@@#~      \n\
-              .d@@@@@D\` .n6#@@@#V\`             Q@@@@@@@@@@@@@@@@d.       \n\
-                x0@@@@0^   \`__-                M@@@@@@@@@@@@@@0=          \n\
-                  =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=             \n\
-                    \`vR#@@@@@@@@?              M@@@@@@@@#Pv\`             \n\
-                        \"Lf8@@@@v              q@@@#Qa?:                  \n\
+            n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     languages \n\
+             2#@@@#hr _Y#@@@@@@@#q\`          \`X#@@@@@@@@@@@@@@@@@#~      ------------------- \n\
+              .d@@@@@D\` .n6#@@@#V\`             Q@@@@@@@@@@@@@@@@d.       $NF_LANG1 \n\
+                x0@@@@0^   \`__-                M@@@@@@@@@@@@@@0=         $NF_LANG2 \n\
+                  =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=           $NF_LANG3 \n\
+                    \`vR#@@@@@@@@?              M@@@@@@@@#Pv\`             $NF_LANG4 \n\
+                        \"Lf8@@@@v              q@@@#Qa?:                 $NF_LANG5 \n\
                             -!v|\`              _?v!\`                     \n\
 
           \$ nevprojs \n\
