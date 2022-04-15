@@ -66,6 +66,7 @@ jobs:
           NF_PROJ2="papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library for python"
           NF_PROJ3="wormhole:  /wormhole                          - Discord bot that joins text channels"
           NF_PROJ4="gitbot:    /gitbot                            - Discord bot for git repository management"
+          NF_PROJ5="nonovi:    /nonovi & /nonovi-server           - Nonogram player, creator and distribution server"
           echo -e "\`\`\`\n\
           \$ nevfetch\n\
                             .~vVeZNgQBBBQQg9Ze1v~.                         \n\
@@ -100,6 +101,7 @@ jobs:
           $NF_PROJ2 \n\
           $NF_PROJ3 \n\
           $NF_PROJ4 \n\
+          $NF_PROJ5 \n\
           \`\`\`"
           echo -e "\`\`\`\n\
           \$ nevfetch\n\
@@ -135,6 +137,7 @@ jobs:
           $NF_PROJ2 \n\
           $NF_PROJ3 \n\
           $NF_PROJ4 \n\
+          $NF_PROJ5 \n\
           \`\`\`" > README.md
 
       - name: Commit & Push Changes
