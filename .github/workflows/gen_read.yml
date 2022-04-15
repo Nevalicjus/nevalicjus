@@ -62,7 +62,7 @@ jobs:
           NF_DISCORD="Nevalicjus#2137"
           NF_TWITTER="@maciejbromirski"
           NF_GITHUB="Nevalicjus"
-          NF_PROJ1="InviteBot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links"
+          NF_PROJ1="Invitebot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links"
           NF_PROJ2="papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library for python"
           NF_PROJ3="wormhole:  /wormhole                          - Discord bot that joins text channels"
           NF_PROJ4="nonovi:    /nonovi & /nonovi-server           - Nonogram player, creator and distribution server"
