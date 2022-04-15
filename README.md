@@ -32,4 +32,5 @@ InviteBot: /invitebot [invitebot.xyz]         - Discord bot to create invite-rol
 papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library for python 
 wormhole:  /wormhole                          - Discord bot that joins text channels 
 gitbot:    /gitbot                            - Discord bot for git repository management 
+nonovi:    /nonovi & /nonovi-server           - Nonogram player, creator and distribution server 
 ```
