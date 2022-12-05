@@ -29,9 +29,9 @@ W@@@@@@@@@@Q`                                  _0@@@@@@@@@@*   Github: Nevalicju
 $ nevprojs 
 ------------------ 
 Invitebot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links 
-papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library for python 
-wormhole:  /wormhole                          - Discord bot that joins text channels 
+ntfpy:     /ntfpy     [ntfpy.nevdocs.xyz]     - ntfy.sh API wrapper library written in python 
+papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library written in python 
 nonovi:    /nonovi & /nonovi-server           - Nonogram player, creator and distribution server 
-gitbot:    /gitbot                            - Discord bot for git repository management 
-crater:    /crater                            - Discord bot for creating custom commands and events 
+spigetpy:  /spigetpy  [nevdocs.xyz/spigetpy]  - Spiget API wrapper library written in python 
+ 
 ```
