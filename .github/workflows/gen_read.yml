@@ -58,7 +58,7 @@ jobs:
           NF_OS="Win & WSL, Mac, Linux"
           NF_SHELL="Bash"
           NF_EDITOR="Atom & Micro" #Atom (+VSCode) & Micro (+Nano)
-          NF_WEBSITE="n3v.xyz"
+          NF_WEBSITE="nevalicj.us"
           NF_DISCORD="Nevalicjus#2137"
           NF_TWITTER="@maciejbromirski"
           NF_GITHUB="Nevalicjus"

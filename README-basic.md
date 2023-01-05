@@ -35,10 +35,10 @@ orand &bg_color=ffffff00 for trans
 ![Nevalicjus's Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nevalicjus&layout=compact)
 -->
 <p align = "center">
-  <a href = "https://n3v.xyz/twitter">
+  <a href = "https://nevalicj.us/twitter">
     <img src = "https://img.shields.io/badge/-@maciejbromirski-grey?style=flat&logo=twitter&labelColor=grey">
   </a>
-  <a href = "https://n3v.xyz/">
+  <a href = "https://nevalicj.us/">
     <img src = "https://img.shields.io/badge/https://-n3v.xyz-lightblue?style=flat&color=8DC2B9">
   </a>
 </p>
