@@ -3,8 +3,8 @@ $ nevfetch
                   .~vVeZNgQBBBQQg9Ze1v~.                         
               `^}%B@@@@@@@@@@@@@@@@@@@@@@8%}=`                 nevalicjus@nev 
              -Lq#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#qr-            ------------------- 
-        .V0@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0?.           Uptime: 17 years and 300 days 
-      _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l`         OS: Win & WSL, Mac, Linux 
+        .V0@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0?.           Uptime: 18 years and 130 days 
+      _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l`         OS: Mac, Linux, Win + WSL 
     `o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o`       Shell: Bash 
    ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Editor: Atom & Micro 
   ?@@@@@@@@@@q                                z@@@@@@@@@#?     
@@ -19,19 +19,19 @@ W@@@@@@@@@@Q`                                  _0@@@@@@@@@@*   Github: Nevalicju
  ;@@@@@@@@@@@@6^.                          `\p@@@@@@@@@@@@~    
   n@@@@@PlVd@@@@#6Vv~_`              `_!?zd#@@@@@@@@@@@@#n     languages 
    2#@@@#hr _Y#@@@@@@@#q`          `X#@@@@@@@@@@@@@@@@@#~      ------------------- 
-    .d@@@@@D` .n6#@@@#V`             Q@@@@@@@@@@@@@@@@d.       Python 89.49% 
-      x0@@@@0^   `__-                M@@@@@@@@@@@@@@0=         Go 10.49% 
-        =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=           Shell 0.02% 
-          `vR#@@@@@@@@?              M@@@@@@@@#Pv`              
+    .d@@@@@D` .n6#@@@#V`             Q@@@@@@@@@@@@@@@@d.       Python 84.38% 
+      x0@@@@0^   `__-                M@@@@@@@@@@@@@@0=         Go 7.13% 
+        =p#@@@#%Il]]L1,              M@@@@@@@@@@@#V=           Shell 4.76% 
+          `vR#@@@@@@@@?              M@@@@@@@@#Pv`             Haskell 3.73% 
               "Lf8@@@@v              q@@@#Qa?:                  
                   -!v|`              _?v!`                     
 
 $ nevprojs 
 ------------------ 
 Invitebot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links 
-papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library for python 
-wormhole:  /wormhole                          - Discord bot that joins text channels 
+ntfpy:     /ntfpy     [ntfpy.nevdocs.xyz]     - ntfy.sh API wrapper library written in python 
+papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library written in python 
 nonovi:    /nonovi & /nonovi-server           - Nonogram player, creator and distribution server 
-gitbot:    /gitbot                            - Discord bot for git repository management 
-crater:    /crater                            - Discord bot for creating custom commands and events 
+spigetpy:  /spigetpy  [nevdocs.xyz/spigetpy]  - Spiget API wrapper library written in python 
+ 
 ```

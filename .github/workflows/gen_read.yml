@@ -55,7 +55,7 @@ jobs:
           NF_LANG3="$(awk '{split($0, array, ", "); print array[3]}' <<< "$NF_LANGS")"
           NF_LANG4="$(awk '{split($0, array, ", "); print array[4]}' <<< "$NF_LANGS")"
           NF_LANG5="$(awk '{split($0, array, ", "); print array[5]}' <<< "$NF_LANGS")"
-          NF_OS="Win & WSL, Mac, Linux"
+          NF_OS="Mac, Linux, Win + WSL"
           NF_SHELL="Bash"
           NF_EDITOR="Atom & Micro" #Atom (+VSCode) & Micro (+Nano)
           NF_WEBSITE="nevalicj.us"
@@ -63,11 +63,11 @@ jobs:
           NF_TWITTER="@maciejbromirski"
           NF_GITHUB="Nevalicjus"
           NF_PROJ1="Invitebot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links"
-          NF_PROJ2="papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library for python"
-          NF_PROJ3="wormhole:  /wormhole                          - Discord bot that joins text channels"
+          NF_PROJ2="ntfpy:     /ntfpy     [ntfpy.nevdocs.xyz]     - ntfy.sh API wrapper library written in python"
+          NF_PROJ3="papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library written in python"
           NF_PROJ4="nonovi:    /nonovi & /nonovi-server           - Nonogram player, creator and distribution server"
-          NF_PROJ5="gitbot:    /gitbot                            - Discord bot for git repository management"
-          NF_PROJ6="crater:    /crater                            - Discord bot for creating custom commands and events"
+          NF_PROJ5="spigetpy:  /spigetpy  [nevdocs.xyz/spigetpy]  - Spiget API wrapper library written in python"
+          NF_PROJ6=""
           echo -e "\`\`\`\n\
           \$ nevfetch\n\
                             .~vVeZNgQBBBQQg9Ze1v~.                         \n\
