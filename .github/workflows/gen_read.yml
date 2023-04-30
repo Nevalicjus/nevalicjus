@@ -42,9 +42,15 @@ jobs:
                   l.append(f\"{txf.text}\")
           lf = \"\"
           x = 0
+          ln = []
           while x < len(l):
-              lf += f\"{l[x]}\"
-              if l[x].endswith(\"%\"):
+              ln.append(l[x])
+              ln.append(l[x + 1])
+              x += 4
+          x = 0
+          while x < len(ln):
+              lf += f\"{ln[x]}\"
+              if ln[x].endswith(\"%\"):
                   lf += f\", \"
               else:
                   lf += \" \"
