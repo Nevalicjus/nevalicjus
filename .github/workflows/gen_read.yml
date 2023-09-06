@@ -63,9 +63,9 @@ jobs:
           NF_LANG5="$(awk '{split($0, array, ", "); print array[5]}' <<< "$NF_LANGS")"
           NF_OS="Mac, Linux, Win + WSL"
           NF_SHELL="Zsh"
-          NF_EDITOR="Atom & Micro" #Atom (+VSCode) & Micro (+Nano)
+          NF_EDITOR="VSCode & Micro" #r.i.p. atom
           NF_WEBSITE="nevalicj.us"
-          NF_DISCORD="Nevalicjus#2137"
+          NF_DISCORD="@nevalicjus"
           NF_TWITTER="@maciejbromirski"
           NF_GITHUB="Nevalicjus"
           NF_PROJ1="Invitebot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links"
