@@ -6,13 +6,13 @@ $ nevfetch
         .V0@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@0?.           Uptime: 19 years and 9 days 
       _l#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#l`         OS: Mac, Linux, Win + WSL 
     `o@@@@@@@@v^r}P0@@@@@@@@@@@@@@@@@@@@ghlr<r@@@@@@@#o`       Shell: Zsh 
-   ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Editor: Atom & Micro 
+   ;0@@@@@@@@0      .?szL?*;!!!!~*|]Vox_      P@@@@@@@@0.      Editor: VSCode & Micro 
   ?@@@@@@@@@@q                                z@@@@@@@@@#?     
  :@@@@@@@@@@@Q                                R@@@@@@@@@@@"     
 _g@@@@@@@@@@2-                                `M@@@@@@@@@@0    contact 
 a@@@@@@@@@@2                                    v@@@@@@@@@@;   ------------------- 
 #@@@@@@@@@@_                                     @@@@@@@@@@y   Website: nevalicj.us 
-@@@@@@@@@@@.                                     @@@@@@@@@@%   Discord: Nevalicjus#2137 
+@@@@@@@@@@@.                                     @@@@@@@@@@%   Discord: @nevalicjus 
 #@@@@@@@@@@r                                    :@@@@@@@@@@s   Twitter: @maciejbromirski 
 W@@@@@@@@@@Q`                                  _0@@@@@@@@@@*   Github: Nevalicjus 
 ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    
