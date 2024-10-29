@@ -63,17 +63,15 @@ jobs:
           NF_LANG5="$(awk '{split($0, array, ", "); print array[5]}' <<< "$NF_LANGS")"
           NF_OS="Mac, Linux, Win + WSL"
           NF_SHELL="Zsh"
-          NF_EDITOR="VSCode & Micro" #r.i.p. atom
+          NF_EDITOR="VSCode & Micro" # rip atom
           NF_WEBSITE="nevalicj.us"
           NF_DISCORD="@nevalicjus"
-          NF_TWITTER="@maciejbromirski"
           NF_GITHUB="Nevalicjus"
-          NF_PROJ1="Invitebot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links"
+          NF_PROJ1="invitebot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links"
           NF_PROJ2="ntfpy:     /ntfpy     [ntfpy.nevdocs.xyz]     - ntfy.sh API wrapper library written in python"
-          NF_PROJ3="papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library written in python"
+          NF_PROJ3="nevbuild:  /nevbuild                          - Small rust app to run scripts"
           NF_PROJ4="nonovi:    /nonovi & /nonovi-server           - Nonogram player, creator and distribution server"
-          NF_PROJ5="spigetpy:  /spigetpy  [nevdocs.xyz/spigetpy]  - Spiget API wrapper library written in python"
-          NF_PROJ6=""
+          NF_PROJ5=""
           echo -e "\`\`\`\n\
           \$ nevfetch\n\
                             .~vVeZNgQBBBQQg9Ze1v~.                         \n\
@@ -89,8 +87,8 @@ jobs:
           a@@@@@@@@@@2                                    v@@@@@@@@@@;   ------------------- \n\
           #@@@@@@@@@@_                                     @@@@@@@@@@y   Website: $NF_WEBSITE \n\
           @@@@@@@@@@@.                                     @@@@@@@@@@%   Discord: $NF_DISCORD \n\
-          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Twitter: $NF_TWITTER \n\
-          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Github: $NF_GITHUB \n\
+          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Github: $NF_GITHUB \n\
+          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   \n\
           ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    \n\
            ;@@@@@@@@@@@@6^.                          \`\\p@@@@@@@@@@@@~    \n\
             n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     languages \n\
@@ -109,7 +107,6 @@ jobs:
           $NF_PROJ3 \n\
           $NF_PROJ4 \n\
           $NF_PROJ5 \n\
-          $NF_PROJ6 \n\
           \`\`\`"
           echo -e "\`\`\`\n\
           \$ nevfetch\n\
@@ -126,8 +123,8 @@ jobs:
           a@@@@@@@@@@2                                    v@@@@@@@@@@;   ------------------- \n\
           #@@@@@@@@@@_                                     @@@@@@@@@@y   Website: $NF_WEBSITE \n\
           @@@@@@@@@@@.                                     @@@@@@@@@@%   Discord: $NF_DISCORD \n\
-          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Twitter: $NF_TWITTER \n\
-          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   Github: $NF_GITHUB \n\
+          #@@@@@@@@@@r                                    :@@@@@@@@@@s   Github: $NF_GITHUB \n\
+          W@@@@@@@@@@Q\`                                  _0@@@@@@@@@@*   \n\
           ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    \n\
            ;@@@@@@@@@@@@6^.                          \`\\p@@@@@@@@@@@@~    \n\
             n@@@@@PlVd@@@@#6Vv~_\`              \`_!?zd#@@@@@@@@@@@@#n     languages \n\
@@ -146,7 +143,6 @@ jobs:
           $NF_PROJ3 \n\
           $NF_PROJ4 \n\
           $NF_PROJ5 \n\
-          $NF_PROJ6 \n\
           \`\`\`" > README.md
 
       - name: Commit & Push Changes
