@@ -13,8 +13,8 @@ _g@@@@@@@@@@2-                                `M@@@@@@@@@@0    contact
 a@@@@@@@@@@2                                    v@@@@@@@@@@;   ------------------- 
 #@@@@@@@@@@_                                     @@@@@@@@@@y   Website: nevalicj.us 
 @@@@@@@@@@@.                                     @@@@@@@@@@%   Discord: @nevalicjus 
-#@@@@@@@@@@r                                    :@@@@@@@@@@s   Twitter: @maciejbromirski 
-W@@@@@@@@@@Q`                                  _0@@@@@@@@@@*   Github: Nevalicjus 
+#@@@@@@@@@@r                                    :@@@@@@@@@@s   Github: Nevalicjus 
+W@@@@@@@@@@Q`                                  _0@@@@@@@@@@*   
 ~#@@@@@@@@@@9!                                ,Q@@@@@@@@@@#    
  ;@@@@@@@@@@@@6^.                          `\p@@@@@@@@@@@@~    
   n@@@@@PlVd@@@@#6Vv~_`              `_!?zd#@@@@@@@@@@@@#n     languages 
@@ -28,10 +28,9 @@ W@@@@@@@@@@Q`                                  _0@@@@@@@@@@*   Github: Nevalicju
 
 $ nevprojs 
 ------------------ 
-Invitebot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links 
+invitebot: /invitebot [invitebot.xyz]         - Discord bot to create invite-role links 
 ntfpy:     /ntfpy     [ntfpy.nevdocs.xyz]     - ntfy.sh API wrapper library written in python 
-papermcpy: /papermcpy [nevdocs.xyz/papermcpy] - PaperMC's API wrapper library written in python 
+nevbuild:  /nevbuild                          - Small rust app to run scripts 
 nonovi:    /nonovi & /nonovi-server           - Nonogram player, creator and distribution server 
-spigetpy:  /spigetpy  [nevdocs.xyz/spigetpy]  - Spiget API wrapper library written in python 
  
 ```
