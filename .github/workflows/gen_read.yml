@@ -61,9 +61,9 @@ jobs:
           NF_LANG3="$(awk '{split($0, array, ", "); print array[3]}' <<< "$NF_LANGS")"
           NF_LANG4="$(awk '{split($0, array, ", "); print array[4]}' <<< "$NF_LANGS")"
           NF_LANG5="$(awk '{split($0, array, ", "); print array[5]}' <<< "$NF_LANGS")"
-          NF_OS="Mac, Linux, Win + WSL"
-          NF_SHELL="Zsh"
-          NF_EDITOR="VSCode & Micro" # rip atom
+          NF_OS="Unix-something"
+          NF_SHELL="zsh"
+          NF_EDITOR="Zed & micro"
           NF_WEBSITE="nevalicj.us"
           NF_DISCORD="@nevalicjus"
           NF_GITHUB="Nevalicjus"
